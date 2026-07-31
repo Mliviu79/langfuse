@@ -81,7 +81,23 @@ service:
             type: optional<integer>
             docs: Optional version to filter deletion. If specified, deletes only this specific version of the prompt.
 
+    filterOptions:
+      docs: Get the distinct set of prompt names, tags, and labels in the current project. Intended for populating filter pickers from a backend service without a browser session.
+      method: GET
+      path: /prompts/filterOptions
+      response: PromptFilterOptionsResponse
+
 types:
+  PromptFilterOption:
+    properties:
+      value: string
+
+  PromptFilterOptionsResponse:
+    properties:
+      name: list<PromptFilterOption>
+      tags: list<PromptFilterOption>
+      labels: list<PromptFilterOption>
+
   PromptMetaListResponse:
     properties:
       data: list<PromptMeta>
