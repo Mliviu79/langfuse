@@ -9,6 +9,7 @@ import { getPromptsFilterOptions } from "@/src/features/prompts/server/actions/g
 export default withMiddlewares({
   GET: createAuthedProjectAPIRoute({
     name: "Get Prompts Filter Options",
+    action: "prompts:read",
     querySchema: GetPromptsFilterOptionsV2Query,
     responseSchema: GetPromptsFilterOptionsV2Response,
     isAdminApiKeyAuthAllowed: true,
